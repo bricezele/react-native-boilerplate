@@ -1,6 +1,17 @@
 apply plugin: "com.android.application"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+
+project.ext.envConfigFiles = [
+        debug: ".env.development",
+        developmentdebug: ".env.development",
+        developmentrelease: ".env.development",
+        stagingdebug: ".env.staging",
+        stagingrelease: ".env.staging",
+        productiondebug: ".env.production",
+        productionrelease: ".env.production"
+]
 
 /**
  * This is the configuration block to customize your React Native Android app.
