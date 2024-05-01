@@ -84,6 +84,42 @@ android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
+    flavorDimensions "environment"
+    productFlavors {
+        development {
+            minSdkVersion rootProject.ext.minSdkVersion
+            dimension "environment"
+            minSdkVersion rootProject.ext.minSdkVersion
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            applicationIdSuffix ".development"
+            versionNameSuffix "-development"
+            versionCode 1
+            versionName "1.0.0"
+            resValue "string", "build_config_package", "com.rnboilerplate.development"
+        }
+        staging {
+            minSdkVersion rootProject.ext.minSdkVersion
+            dimension "environment"
+            minSdkVersion rootProject.ext.minSdkVersion
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
+            versionCode 1
+            versionName "1.0.0"
+            resValue "string", "build_config_package", "com.rnboilerplate.staging"
+        }
+        production {
+            minSdkVersion rootProject.ext.minSdkVersion
+            dimension "environment"
+            applicationId "com.rnboilerplate"
+            minSdkVersion rootProject.ext.minSdkVersion
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            versionCode 1
+            versionName "1.0.0"
+            resValue "string", "build_config_package", "com.rnboilerplate"
+        }
+    }
+
 
     namespace "com.rnboilerplate"
     defaultConfig {
